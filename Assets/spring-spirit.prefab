@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7115670067420130761}
   - component: {fileID: 7115670067420130760}
   - component: {fileID: 7115670067420130763}
+  - component: {fileID: 1265749817620523421}
   m_Layer: 7
   m_Name: spring-spirit
   m_TagString: spirit
@@ -149,3 +150,23 @@ MonoBehaviour:
   horizontalSpeed: 2.55
   amplitude: 1
   frequency: 2.5
+--- !u!95 &1265749817620523421
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7115670067420130762}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b39f9ce4caad9ab468b4ceb1837f0e2b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
