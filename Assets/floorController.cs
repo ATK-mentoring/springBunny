@@ -18,6 +18,7 @@ public class floorController : MonoBehaviour
             GameObject newPlatform = Instantiate(BaseSprite, floors.transform );
             newPlatform.transform.position = new Vector3(Mathf.Floor(middle.x) + i - 19.5f, -4.5f, 0.0f);
         }
+        
     }
 
     // Update is called once per frame

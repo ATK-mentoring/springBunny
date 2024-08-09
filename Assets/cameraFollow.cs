@@ -11,9 +11,12 @@ public class cameraFollow : MonoBehaviour
     private float targetY = 0.0f;
 
     private Vector3 velocity;
+    public GameObject Background;
+    private Material BGMaterial;
 
     private void LateUpdate()
     {
+        BGMaterial = Background.GetComponent<SpriteRenderer>().material;
         Vector3 targetPos = target.position;
         if (target.gameObject.GetComponent<bunnyController>().is_grounded)
         {
@@ -29,8 +32,14 @@ public class cameraFollow : MonoBehaviour
         targetPos.y = targetY;
         Vector3 newPosition = Vector3.SmoothDamp(transform.position, targetPos, ref velocity, smoothTime);
         newPosition.z = -10.0f;
-        
-        
+
+        Vector2 newOffset = BGMaterial.mainTextureOffset;
+        Vector3 cameraMovement = newPosition - transform.position;
+        cameraMovement /= 8.0f;
+        newOffset += new Vector2(cameraMovement.x, cameraMovement.y);
+        //if (newOffset.x > 1.0f)
+        BGMaterial.mainTextureOffset = newOffset;
+
         transform.position = newPosition;
     }
     // Start is called before the first frame update

@@ -89,6 +89,10 @@ public class bunnyController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        if (collision.gameObject.tag == "spirit")
+        {
+            Debug.Log("spirit hit");
+            my_rigidbody.isKinematic = false;
+        }
     }
 }

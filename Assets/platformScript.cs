@@ -27,7 +27,7 @@ public class platformScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool updateposition = false;
+        
         if (Mathf.Abs(Vector2.Distance(transform.position, startPosition)) >= distance)
         {
             reverse = !reverse;
@@ -39,7 +39,7 @@ public class platformScript : MonoBehaviour
                 transform.position = new Vector2(startPosition.x - distance, transform.position.y);
             }
             
-            updateposition = true;
+            
         }
         if (!reverse)
         {
