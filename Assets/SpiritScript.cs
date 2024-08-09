@@ -66,6 +66,7 @@ public class SpiritScript : MonoBehaviour
         {
             myAnimator.SetTrigger("death");
             alive = false;
+            Camera.main.GetComponent<cameraFollow>().SpiritJump();
         }
     }
 }

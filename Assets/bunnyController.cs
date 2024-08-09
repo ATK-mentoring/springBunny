@@ -29,8 +29,10 @@ public class bunnyController : MonoBehaviour
             // can jump
             my_animator.SetTrigger("jump");
             //my_animator.ResetTrigger("landed");
+            Jump();
 
-            
+
+
         }
         if (!is_grounded)
         {
@@ -78,6 +80,7 @@ public class bunnyController : MonoBehaviour
             my_rigidbody.isKinematic = true;
         } else if (collision.gameObject.tag == "spirit")
         {
+            my_rigidbody.velocity = new Vector2(my_rigidbody.velocity.x, 0.0f);
             my_rigidbody.AddForce(transform.up * spiritJumpForce);
         }
     }
