@@ -42,8 +42,8 @@ public class SpiritScript : MonoBehaviour
             float new_y = transform.position.y + horizontalSpeed * Time.deltaTime;
             myRB.MovePosition(new Vector2(new_x, new_y));
             GetComponent<BoxCollider2D>().enabled = false;
-            GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, GetComponent<SpriteRenderer>().color.a - 25);
-            if (GetComponent<SpriteRenderer>().color.a <= 0)
+            GetComponent<SpriteRenderer>().color = new Color(255.0f, 255.0f, 255.0f, GetComponent<SpriteRenderer>().color.a - 0.01f);
+            if (GetComponent<SpriteRenderer>().color.a <= 0.0f)
             {
                 Destroy(gameObject);
             }
@@ -55,7 +55,7 @@ public class SpiritScript : MonoBehaviour
     {
         if (collision.tag == "MainCamera")
         {
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
 
     }

@@ -652,6 +652,7 @@ MonoBehaviour:
   move_speed: 11.04
   jump_force: 552.4
   max_speed: 3.43
+  spiritJumpForce: 552.4
 --- !u!1 &1691753749
 GameObject:
   m_ObjectHideFlags: 0

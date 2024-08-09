@@ -10,6 +10,7 @@ public class bunnyController : MonoBehaviour
     private Rigidbody2D my_rigidbody;
     private Animator my_animator;
     public float max_speed;
+    public float spiritJumpForce;
 
     // Start is called before the first frame update
     void Start()
@@ -75,6 +76,9 @@ public class bunnyController : MonoBehaviour
             my_animator.SetTrigger("landed");
             transform.parent = collision.transform;
             my_rigidbody.isKinematic = true;
+        } else if (collision.gameObject.tag == "spirit")
+        {
+            my_rigidbody.AddForce(transform.up * spiritJumpForce);
         }
     }
 
