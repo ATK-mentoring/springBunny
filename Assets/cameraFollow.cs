@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class cameraFollow : MonoBehaviour
 {
@@ -16,6 +18,7 @@ public class cameraFollow : MonoBehaviour
     public float downCameraTrigger;
     private bool downCamera = false;
     private bool spiritJump = false;
+    public TMP_Text text;
 
     private void LateUpdate()
     {
