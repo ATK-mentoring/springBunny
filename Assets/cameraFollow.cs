@@ -19,6 +19,7 @@ public class cameraFollow : MonoBehaviour
     private bool downCamera = false;
     private bool spiritJump = false;
     public TMP_Text text;
+    private float max_height = 0.0f;
 
     private void LateUpdate()
     {
@@ -57,6 +58,14 @@ public class cameraFollow : MonoBehaviour
         BGMaterial.mainTextureOffset = newOffset;
 
         transform.position = newPosition;
+
+        // set the height counter
+        if (target.position.y > max_height)
+        {
+            max_height = target.position.y;
+            text.text = max_height.ToString();
+        }
+
     }
     // Start is called before the first frame update
     void Start()
