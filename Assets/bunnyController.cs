@@ -136,6 +136,7 @@ public class bunnyController : MonoBehaviour
         {
             isFalling = false;
             canDieToFalling = false;
+            is_grounded = false;
             my_rigidbody.velocity = new Vector2(my_rigidbody.velocity.x, 0.0f);
             my_rigidbody.AddForce(transform.up * spiritJumpForce);
         }
