@@ -11,6 +11,14 @@ public class bunnyController : MonoBehaviour
     private Animator my_animator;
     public float max_speed;
     public float spiritJumpForce;
+    public float deathHeight;
+    private float fallHeight;
+    private bool isFalling = false;
+    private bool canDieToFalling = false;
+    private bool gameover = false;
+    private float cameraShrinkTimer = 0.0f;
+    private float cameraVelocity;
+    public GameObject gameOverUI;
 
     // Start is called before the first frame update
     void Start()
@@ -22,64 +30,112 @@ public class bunnyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //my_animator.ResetTrigger("jump");
-        //my_animator.ResetTrigger("landed");
-        if (is_grounded && Input.GetKeyDown(KeyCode.Space))
+        if (!gameover)
         {
-            // can jump
-            my_animator.SetTrigger("jump");
+            //my_animator.ResetTrigger("jump");
             //my_animator.ResetTrigger("landed");
-            Jump();
+            if (is_grounded && Input.GetKeyDown(KeyCode.Space))
+            {
+                isFalling = false;
+                // can jump
+                my_animator.SetTrigger("jump");
+                //my_animator.ResetTrigger("landed");
+                Jump();
 
 
 
-        }
-        if (!is_grounded)
+            }
+            if (!is_grounded)
+            {
+                // check if moving left or right
+                float move_input = 0.0f;
+                if (Input.GetKey(KeyCode.LeftArrow))
+                {
+                    move_input += -1.0f;
+                }
+                if (Input.GetKey(KeyCode.RightArrow))
+                {
+                    move_input += 1.0f;
+                }
+                my_rigidbody.AddForce(transform.right * move_input * move_speed);
+            }
+            //flip sprite to face movement
+            if (Mathf.Abs(my_rigidbody.velocity.x) > 0.0f)
+            {
+                if (my_rigidbody.velocity.x > 0.0f)
+                {
+                    transform.localScale = new Vector2(Mathf.Abs(transform.localScale.x), transform.localScale.y);
+                }
+                else
+                {
+                    transform.localScale = new Vector2(Mathf.Abs(transform.localScale.x) * -1.0f, transform.localScale.y);
+                }
+            }
+            if (Mathf.Abs(my_rigidbody.velocity.x) > max_speed)
+            {
+                float new_speed = max_speed;
+                if (my_rigidbody.velocity.x < 0.0f)
+                {
+                    new_speed *= -1.0f;
+                }
+                my_rigidbody.velocity = new Vector2(new_speed, my_rigidbody.velocity.y);
+            }
+            //check if falling and store height
+            if (my_rigidbody.velocity.y < 0.0f && !isFalling)
+            {
+                //we are falling
+                fallHeight = transform.position.y;
+                isFalling = true;
+            }
+            if (isFalling)
+            {
+                if (fallHeight - transform.position.y > deathHeight)
+                {
+                    canDieToFalling = true;
+                }
+            }
+        } else
         {
-            // check if moving left or right
-            float move_input = 0.0f;
-            if (Input.GetKey(KeyCode.LeftArrow))
+            //game over code
+            //shink camera size to zoom in
+            float cameraTargetSize = 1.5f;
+            float cameraShrinkDuration = 3.0f;
+            if (cameraShrinkTimer < cameraShrinkDuration)
             {
-                move_input += -1.0f;
+                //shrint a little bit
+                Camera.main.orthographicSize = Mathf.SmoothDamp(Camera.main.orthographicSize, cameraTargetSize, ref cameraVelocity, cameraShrinkDuration / cameraShrinkTimer);
+                cameraShrinkTimer += Time.deltaTime;
             }
-            if (Input.GetKey(KeyCode.RightArrow))
-            {
-                move_input += 1.0f;
-            }
-            my_rigidbody.AddForce(transform.right * move_input * move_speed);
+            //display game over text
+            gameOverUI.SetActive(true);
+            //show text field for player name input
+            //show button for saving high score
         }
-        //flip sprite to face movement
-        if (Mathf.Abs(my_rigidbody.velocity.x) > 0.0f)
-        {
-            if (my_rigidbody.velocity.x > 0.0f)
-            {
-                transform.localScale = new Vector2(Mathf.Abs(transform.localScale.x), transform.localScale.y);
-            } else
-            {
-                transform.localScale = new Vector2(Mathf.Abs(transform.localScale.x) * -1.0f, transform.localScale.y);
-            }
-        }
-        if (Mathf.Abs(my_rigidbody.velocity.x) > max_speed)
-        {
-            float new_speed = max_speed;
-            if (my_rigidbody.velocity.x < 0.0f)
-            {
-                new_speed *= -1.0f;
-            }
-            my_rigidbody.velocity = new Vector2(new_speed, my_rigidbody.velocity.y);
-        }
+        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "platform")
         {
-            is_grounded = true;
-            my_rigidbody.velocity = Vector2.zero;
-            my_animator.SetTrigger("landed");
-            transform.parent = collision.transform;
-            my_rigidbody.isKinematic = true;
+            if (canDieToFalling)
+            {
+                //game over
+                my_animator.SetTrigger("dead");
+                gameover = true;
+            } else
+            {
+                isFalling = false;
+                is_grounded = true;
+                my_rigidbody.velocity = Vector2.zero;
+                my_animator.SetTrigger("landed");
+                transform.parent = collision.transform;
+                my_rigidbody.isKinematic = true;
+            }
+            
         } else if (collision.gameObject.tag == "spirit")
         {
+            isFalling = false;
+            canDieToFalling = false;
             my_rigidbody.velocity = new Vector2(my_rigidbody.velocity.x, 0.0f);
             my_rigidbody.AddForce(transform.up * spiritJumpForce);
         }
@@ -87,6 +143,7 @@ public class bunnyController : MonoBehaviour
 
     private void Jump()
     {
+        isFalling = false;
         transform.parent = null;
         my_rigidbody.isKinematic = false;
         my_rigidbody.AddForce(transform.up * jump_force);

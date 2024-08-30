@@ -62,7 +62,7 @@ public class cameraFollow : MonoBehaviour
         // set the height counter
         if (target.position.y > max_height)
         {
-            max_height = target.position.y;
+            max_height = Mathf.FloorToInt(target.position.y);
             text.text = max_height.ToString();
         }
 
