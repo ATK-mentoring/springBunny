@@ -20,8 +20,8 @@ public class DisplayHighscores : MonoBehaviour
     }
     public void SetScoresToMenu(PlayerScore[] highscoreList) //Assigns proper name and score for each text value
     {
-        Debug.Log("setting scores to menu");
-        Debug.Log(highscoreList[0]);
+        //Debug.Log("setting scores to menu");
+        //Debug.Log(highscoreList[0]);
         for (int i = 0; i < rNames.Length;i ++)
         {
             rNames[i].text = "";

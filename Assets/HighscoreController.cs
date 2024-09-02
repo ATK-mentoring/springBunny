@@ -11,8 +11,21 @@ public class HighscoreController : MonoBehaviour
     //public int score;
     //public HighScores HS;
     public TMPro.TextMeshProUGUI playerName;
+    public TMPro.TMP_InputField Pname;
     public TMPro.TextMeshProUGUI playerScore;
     public Button saveButton;
+
+
+    public void NameValueChanged()
+    {
+        Debug.Log("test");
+        Pname.text = Pname.text.ToUpper();
+        if (Pname.text.Length > 3)
+        {
+            Debug.Log("long " + Pname.text.Substring(0, 3));
+            Pname.text = Pname.text.Substring(0, 3);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()

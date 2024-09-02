@@ -25,7 +25,7 @@ public class HighScores : MonoBehaviour
     
     public static void UploadScore(string username, int score)  //CALLED when Uploading new Score to WEBSITE
     {//STATIC to call from other scripts easily
-        Debug.Log("uploadScore " + username + " " + score);
+        //Debug.Log("uploadScore " + username + " " + score);
         instance.StartCoroutine(instance.DatabaseUpload(username,score)); //Calls Instance
     }
 
@@ -52,7 +52,7 @@ public class HighScores : MonoBehaviour
                     break;
                 case UnityWebRequest.Result.Success:
                     Debug.Log(pages[page] + ":\nReceived: " + webRequest.downloadHandler.text);
-                    Mainmenubutton.SetActive(true);
+                    Mainmenubutton.SetActive( true);
                     break;
             }
         }
@@ -72,7 +72,7 @@ public class HighScores : MonoBehaviour
 
     public void DownloadScores()
     {
-        Debug.Log("downloading scores");
+        //Debug.Log("downloading scores");
         StartCoroutine("DatabaseDownload");
     }
     IEnumerator DatabaseDownload()
