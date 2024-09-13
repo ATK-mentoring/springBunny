@@ -6,7 +6,8 @@ public class bunnyController : MonoBehaviour
 {
     public bool is_grounded;
     public float move_speed;
-    public float jump_force;
+    public float jump_force; 
+    public float side_jump_force; 
     private Rigidbody2D my_rigidbody;
     private Animator my_animator;
     public float max_speed;
@@ -19,6 +20,7 @@ public class bunnyController : MonoBehaviour
     private float cameraShrinkTimer = 0.0f;
     private float cameraVelocity;
     public GameObject gameOverUI;
+    public bool can_sideJump = false; 
 
     // Start is called before the first frame update
     void Start()
@@ -34,16 +36,24 @@ public class bunnyController : MonoBehaviour
         {
             //my_animator.ResetTrigger("jump");
             //my_animator.ResetTrigger("landed");
-            if (is_grounded && Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                isFalling = false;
-                // can jump
-                my_animator.SetTrigger("jump");
-                //my_animator.ResetTrigger("landed");
-                Jump();
-
-
-
+                if (is_grounded)
+                {
+                    isFalling = false;
+                    // can jump
+                    my_animator.SetTrigger("jump");
+                    //my_animator.ResetTrigger("landed");
+                    Jump(jump_force);
+                } else if (can_sideJump)
+                {
+                    isFalling = false;
+                    // can jump
+                    my_animator.SetTrigger("jump");
+                    //my_animator.ResetTrigger("landed");
+                    Jump(side_jump_force);
+                }
+                
             }
             if (!is_grounded)
             {
@@ -139,15 +149,31 @@ public class bunnyController : MonoBehaviour
             is_grounded = false;
             my_rigidbody.velocity = new Vector2(my_rigidbody.velocity.x, 0.0f);
             my_rigidbody.AddForce(transform.up * spiritJumpForce);
+
+        } else if (collision.gameObject.tag == "side")
+        {
+            Debug.Log("side detected");
+            can_sideJump = true;
+            canDieToFalling = false;
+            isFalling = false;
         }
     }
 
-    private void Jump()
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "side")
+        {
+
+            can_sideJump = false;
+        }
+    }
+
+    private void Jump(float this_jump_force)
     {
         isFalling = false;
         transform.parent = null;
         my_rigidbody.isKinematic = false;
-        my_rigidbody.AddForce(transform.up * jump_force);
+        my_rigidbody.AddForce(transform.up * this_jump_force);
         is_grounded = false;
         my_animator.ResetTrigger("landed");
     } 

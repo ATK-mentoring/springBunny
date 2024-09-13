@@ -1996,10 +1996,12 @@ MonoBehaviour:
   is_grounded: 1
   move_speed: 11.04
   jump_force: 552.4
+  side_jump_force: 300
   max_speed: 3.43
   spiritJumpForce: 552.4
   deathHeight: 10
   gameOverUI: {fileID: 794745141}
+  can_sideJump: 0
 --- !u!1 &1540860812
 GameObject:
   m_ObjectHideFlags: 0
@@ -2558,7 +2560,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4196696964893119070, guid: d6d717668d926364da19d1513dd164a7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4196696964893119070, guid: d6d717668d926364da19d1513dd164a7, type: 3}
       propertyPath: m_TagString
@@ -2580,10 +2582,6 @@ PrefabInstance:
     - target: {fileID: 7115670067420130762, guid: fe6e9b5ce863b4e4d808fef25243fec9, type: 3}
       propertyPath: m_Name
       value: spring-spirit
-      objectReference: {fileID: 0}
-    - target: {fileID: 7115670067420130806, guid: fe6e9b5ce863b4e4d808fef25243fec9, type: 3}
-      propertyPath: m_Color.a
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7115670067420130807, guid: fe6e9b5ce863b4e4d808fef25243fec9, type: 3}
       propertyPath: m_RootOrder
@@ -2638,6 +2636,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1130919405522717936, guid: c7096722dd2d76146907246819fe78e7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8819498232799179938, guid: c7096722dd2d76146907246819fe78e7, type: 3}
       propertyPath: m_RootOrder
       value: 3
