@@ -9,11 +9,12 @@ public class HighscoreController : MonoBehaviour
 
     //public string PlayerName;
     //public int score;
-    //public HighScores HS;
+    public HighScores HS;
     public TMPro.TextMeshProUGUI playerName;
     public TMPro.TMP_InputField Pname;
     public TMPro.TextMeshProUGUI playerScore;
     public Button saveButton;
+    public GameObject scoreUI;
 
 
     public void NameValueChanged()
@@ -39,9 +40,36 @@ public class HighscoreController : MonoBehaviour
         
     }
 
+    public void isHighScore()
+    {
+        HS.DownloadScores();
+        
+    }
+
+    public void recieveHoghScores(PlayerScore[] highscoreList)
+    {
+        Debug.Log(highscoreList.Length);
+        for(int i = 0; i < 5; i++)
+        {
+            Debug.Log(i);
+            Debug.Log(highscoreList[i]);
+            if (int.Parse(this.playerScore.text) > highscoreList[i].score)
+            {
+                Debug.Log("playerscore = " + this.playerScore.text + " highscore = " + highscoreList[i].score);
+                scoreUI.SetActive(true);
+            }
+
+        }
+    }
+
     public void MainMenu()
     {
         SceneManager.LoadScene("StartScene");
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene("SampleScene");
     }
 
     public void SaveScore()

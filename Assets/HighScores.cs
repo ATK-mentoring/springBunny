@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class HighScores : MonoBehaviour
 {
     public GameObject Mainmenubutton;
+    public HighscoreController HSController;
 
     const string privateCode = "tMO8dwnEHECZaPewRY93Lw3HNNrT0DzUi8MxH4IaL0HQ";  //Key to Upload New Info
     const string publicCode = "66d111b38f40bb108870f21a";   //Key to download
@@ -15,6 +16,7 @@ public class HighScores : MonoBehaviour
 
     public PlayerScore[] scoreList;
     DisplayHighscores myDisplay;
+    
 
     static HighScores instance; //Required for STATIC usability
     void Awake()
@@ -52,7 +54,7 @@ public class HighScores : MonoBehaviour
                     break;
                 case UnityWebRequest.Result.Success:
                     Debug.Log(pages[page] + ":\nReceived: " + webRequest.downloadHandler.text);
-                    Mainmenubutton.SetActive( true);
+                    //Mainmenubutton.SetActive( true);
                     break;
             }
         }
@@ -100,7 +102,15 @@ public class HighScores : MonoBehaviour
                 case UnityWebRequest.Result.Success:
                     Debug.Log(pages[page] + ":\nReceived: " + webRequest.downloadHandler.text);
                     OrganizeInfo(webRequest.downloadHandler.text);
-                    myDisplay.SetScoresToMenu(scoreList);
+                    if (myDisplay != null)
+                    {
+                        myDisplay.SetScoresToMenu(scoreList);
+                    }
+                    if (HSController != null)
+                    {
+                        HSController.recieveHoghScores(scoreList);
+                    }
+                    
                     break;
             }
         }

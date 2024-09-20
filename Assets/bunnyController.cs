@@ -20,7 +20,9 @@ public class bunnyController : MonoBehaviour
     private float cameraShrinkTimer = 0.0f;
     private float cameraVelocity;
     public GameObject gameOverUI;
-    public bool can_sideJump = false; 
+    public bool can_sideJump = false;
+    public HighscoreController HSController;
+    private bool isGameOverProcessed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -116,10 +118,18 @@ public class bunnyController : MonoBehaviour
                 Camera.main.orthographicSize = Mathf.SmoothDamp(Camera.main.orthographicSize, cameraTargetSize, ref cameraVelocity, cameraShrinkDuration / cameraShrinkTimer);
                 cameraShrinkTimer += Time.deltaTime;
             }
-            //display game over text
-            gameOverUI.SetActive(true);
-            //show text field for player name input
-            //show button for saving high score
+            //single function calls
+            if (!isGameOverProcessed) {
+                //display game over text
+
+                gameOverUI.SetActive(true);
+
+                HSController.isHighScore();
+                isGameOverProcessed = true;
+                //show text field for player name input
+                //show button for saving high score
+            }
+
         }
         
     }
@@ -165,6 +175,9 @@ public class bunnyController : MonoBehaviour
         {
 
             can_sideJump = false;
+        } else if (collision.gameObject.tag == "spirit")
+        {
+            collision.gameObject.GetComponent<SpiritScript>().death();
         }
     }
 

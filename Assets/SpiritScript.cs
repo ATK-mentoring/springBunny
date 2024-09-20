@@ -62,11 +62,18 @@ public class SpiritScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
-        {
-            myAnimator.SetTrigger("death");
-            alive = false;
-            Camera.main.GetComponent<cameraFollow>().SpiritJump();
-        }
+        //if (collision.tag == "Player")
+        //{
+        //    myAnimator.SetTrigger("death");
+        //    alive = false;
+        //    Camera.main.GetComponent<cameraFollow>().SpiritJump();
+        //}
+    }
+
+    public void death()
+    {
+        myAnimator.SetTrigger("death");
+        alive = false;
+        Camera.main.GetComponent<cameraFollow>().SpiritJump();
     }
 }
