@@ -25,13 +25,22 @@ public class platformController : MonoBehaviour
     {
         GameObject newPlatform = Instantiate(platformPrefab);
         Vector2 newPosition = new Vector2(Camera.main.transform.position.x, player.transform.position.y + 2.0f);
-        if (Random.Range(0.0f, 1.0f) > 0.5f)
+        if (player.GetComponent<Rigidbody2D>().velocity.y <= 0.0f && player.transform.position.y > 20.0f)
         {
-            newPosition += new Vector2(15.0f, 0.0f);
+            newPosition += new Vector2(Random.Range(-7.0f, 7.0f), -15.0f);
         } else
         {
-            newPosition -= new Vector2(15.0f, 0.0f);
+            
+            if (Random.Range(0.0f, 1.0f) > 0.5f)
+            {
+                newPosition += new Vector2(15.0f, 0.0f);
+            }
+            else
+            {
+                newPosition -= new Vector2(15.0f, 0.0f);
+            }
         }
+            
         newPlatform.transform.position = newPosition;
         platforms.Add(newPlatform);
     }

@@ -15,14 +15,25 @@ public class spiritController : MonoBehaviour
     {
         GameObject newSpirit = Instantiate(spiritPrefab);
         Vector2 newPosition = new Vector2(Camera.main.transform.position.x, player.transform.position.y + 0.0f);
-        if (Random.Range(0.0f, 1.0f) > 0.5f)
+        //if player not falling
+        if (player.GetComponent<Rigidbody2D>().velocity.y < -1.0f && player.transform.position.y > 20.0f)
         {
-            newPosition += new Vector2(15.0f, 0.0f);
-        }
-        else
+            newPosition += new Vector2(Random.Range(-5.0f, 5.0f), -15.0f);
+            
+        } else
         {
-            newPosition -= new Vector2(15.0f, 0.0f);
+            if (Random.Range(0.0f, 1.0f) > 0.5f)
+            {
+                newPosition += new Vector2(15.0f, 0.0f);
+            }
+            else
+            {
+                newPosition -= new Vector2(15.0f, 0.0f);
+            }
         }
+        
+        
+        
         newSpirit.transform.position = newPosition;
         spirits.Add(newSpirit);
     }
