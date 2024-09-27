@@ -18,6 +18,7 @@ public class audioController : MonoBehaviour
         {
             case "jump":
                 myAS.clip = jumpClip;
+                //myAS.time = 0.3f;
                 myAS.Play();
                 break;
             case "land":

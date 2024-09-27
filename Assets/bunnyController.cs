@@ -48,7 +48,7 @@ public class bunnyController : MonoBehaviour
                     my_animator.SetTrigger("jump");
                     //my_animator.ResetTrigger("landed");
                     Jump(jump_force);
-                    myAC.playSound("jump");
+                    
                 } else if (can_sideJump)
                 {
                     isFalling = false;
@@ -169,7 +169,7 @@ public class bunnyController : MonoBehaviour
 
         } else if (collision.gameObject.tag == "side")
         {
-            Debug.Log("side detected");
+            //Debug.Log("side detected");
             can_sideJump = true;
             canDieToFalling = false;
             isFalling = false;
@@ -196,13 +196,14 @@ public class bunnyController : MonoBehaviour
         my_rigidbody.AddForce(transform.up * this_jump_force);
         is_grounded = false;
         my_animator.ResetTrigger("landed");
+        myAC.playSound("jump");
     } 
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "spirit")
         {
-            Debug.Log("spirit hit");
+            //Debug.Log("spirit hit");
             my_rigidbody.isKinematic = false;
             myAC.playSound("spiritHit");
         }
