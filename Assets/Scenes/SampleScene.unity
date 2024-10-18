@@ -3435,7 +3435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7827b52e01b5cee408fa8b5bfa1ccb22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpClip: {fileID: 8300000, guid: e6ca90bdd3be759458372015f54bdad1, type: 3}
+  jumpClip: {fileID: 8300000, guid: a94ebbc9be656bd4d8c556edaff976c7, type: 3}
   landClimpClip: {fileID: 8300000, guid: 05c2cf8f51ba0594a9ef5a2d4fb2b3f9, type: 3}
   spiritJumpClip: {fileID: 8300000, guid: 4786c22cfac57554bbd9fbe72c3e0f8f, type: 3}
   spiritHitClip: {fileID: 8300000, guid: 16b128fda8ca5b944ba6aadf1b41bcb0, type: 3}
@@ -3452,7 +3452,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e6ca90bdd3be759458372015f54bdad1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a94ebbc9be656bd4d8c556edaff976c7, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
