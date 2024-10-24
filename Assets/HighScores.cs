@@ -11,7 +11,7 @@ public class HighScores : MonoBehaviour
 
     const string privateCode = "tMO8dwnEHECZaPewRY93Lw3HNNrT0DzUi8MxH4IaL0HQ";  //Key to Upload New Info
     const string publicCode = "66d111b38f40bb108870f21a";   //Key to download
-    const string webURL = "http://dreamlo.com/lb/"; //  Website the keys are for
+    const string webURL = "https://cors-anywhere.herokuapp.com/http://dreamlo.com/lb/"; //  Website the keys are for
     //http://dreamlo.com/lb/tMO8dwnEHECZaPewRY93Lw3HNNrT0DzUi8MxH4IaL0HQ
 
     public PlayerScore[] scoreList;
