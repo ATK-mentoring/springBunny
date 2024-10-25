@@ -108,6 +108,7 @@ public class bunnyController : MonoBehaviour
                 if (fallHeight - transform.position.y > deathHeight)
                 {
                     canDieToFalling = true;
+                    my_animator.SetTrigger("falling");
                 }
             }
         } else
@@ -166,6 +167,7 @@ public class bunnyController : MonoBehaviour
             my_rigidbody.velocity = new Vector2(my_rigidbody.velocity.x, 0.0f);
             my_rigidbody.AddForce(transform.up * spiritJumpForce);
             myAC.playSound("spiritJump");
+            my_animator.SetTrigger("jump");
 
         } else if (collision.gameObject.tag == "side")
         {
@@ -173,6 +175,7 @@ public class bunnyController : MonoBehaviour
             can_sideJump = true;
             canDieToFalling = false;
             isFalling = false;
+            my_animator.SetTrigger("jump");
         }
     }
 
