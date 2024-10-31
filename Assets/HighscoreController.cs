@@ -46,20 +46,28 @@ public class HighscoreController : MonoBehaviour
         
     }
 
-    public void recieveHoghScores(PlayerScore[] highscoreList)
+    public void recieveHoghScores(List<PlayerScore> highscoreList)
     {
-        Debug.Log(highscoreList.Length);
-        for(int i = 0; i < 5; i++)
+        //Debug.Log(highscoreList.Count);
+        if (highscoreList.Count < 5)
         {
-            Debug.Log(i);
-            Debug.Log(highscoreList[i]);
-            if (int.Parse(this.playerScore.text) > highscoreList[i].score)
+            scoreUI.SetActive(true);
+        } else
+        {
+            for (int i = 0; i < 5; i++)
             {
-                Debug.Log("playerscore = " + this.playerScore.text + " highscore = " + highscoreList[i].score);
-                scoreUI.SetActive(true);
-            }
+                //Debug.Log(i);
+                //Debug.Log(highscoreList[i]);
+                if (int.Parse(this.playerScore.text) > highscoreList[i].score)
+                {
+                    //Debug.Log("playerscore = " + this.playerScore.text + " highscore = " + highscoreList[i].score);
+                    scoreUI.SetActive(true);
+                }
 
+            }
         }
+        
+
     }
 
     public void MainMenu()

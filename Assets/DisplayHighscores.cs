@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
 public class DisplayHighscores : MonoBehaviour 
 {
@@ -13,22 +14,22 @@ public class DisplayHighscores : MonoBehaviour
     {
         for (int i = 0; i < rNames.Length;i ++)
         {
-            rNames[i].text = i + 1 + ". Fetching...";
+            rNames[i].text = "";
         }
         myScores = GetComponent<HighScores>();
         StartCoroutine("RefreshHighscores");
     }
-    public void SetScoresToMenu(PlayerScore[] highscoreList) //Assigns proper name and score for each text value
+    public void SetScoresToMenu(List<PlayerScore> highscoreList) //Assigns proper name and score for each text value
     {
         //Debug.Log("setting scores to menu");
         //Debug.Log(highscoreList[0]);
         for (int i = 0; i < rNames.Length;i ++)
         {
             rNames[i].text = "";
-            if (highscoreList.Length > i)
+            if (highscoreList.Count > i)
             {
                 rScores[i].text = highscoreList[i].score.ToString();
-                rNames[i].text = highscoreList[i].username;
+                rNames[i].text = UnityWebRequest.UnEscapeURL(highscoreList[i].name);
             }
         }
     }

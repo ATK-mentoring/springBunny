@@ -277,10 +277,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f4b6de863469ce4a90d9e7670e6c6a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HS: {fileID: 0}
   playerName: {fileID: 0}
   Pname: {fileID: 0}
   playerScore: {fileID: 0}
   saveButton: {fileID: 0}
+  scoreUI: {fileID: 0}
 --- !u!114 &126034053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,6 +296,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mainmenubutton: {fileID: 0}
+  HSController: {fileID: 0}
+  scoreList: []
+  allScores:
+    all_scores: []
 --- !u!4 &126034054
 Transform:
   m_ObjectHideFlags: 0
@@ -376,6 +382,10 @@ PrefabInstance:
     - target: {fileID: 1944114372818860156, guid: 7801f996304c97041a94677e1384d5f9, type: 3}
       propertyPath: m_text
       value: 5.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454452024029303994, guid: 7801f996304c97041a94677e1384d5f9, type: 3}
+      propertyPath: m_fontStyle
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6375750089525603119, guid: 7801f996304c97041a94677e1384d5f9, type: 3}
       propertyPath: m_RootOrder
@@ -586,6 +596,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScoreRow
       objectReference: {fileID: 0}
+    - target: {fileID: 5454452024029303994, guid: 7801f996304c97041a94677e1384d5f9, type: 3}
+      propertyPath: m_fontStyle
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 6375750089525603119, guid: 7801f996304c97041a94677e1384d5f9, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -651,6 +665,10 @@ PrefabInstance:
     - target: {fileID: 1944114372818860156, guid: 7801f996304c97041a94677e1384d5f9, type: 3}
       propertyPath: m_text
       value: 2.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454452024029303994, guid: 7801f996304c97041a94677e1384d5f9, type: 3}
+      propertyPath: m_fontStyle
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6375750089525603119, guid: 7801f996304c97041a94677e1384d5f9, type: 3}
       propertyPath: m_RootOrder
@@ -797,6 +815,10 @@ PrefabInstance:
     - target: {fileID: 1944114372818860156, guid: 7801f996304c97041a94677e1384d5f9, type: 3}
       propertyPath: m_text
       value: 3.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454452024029303994, guid: 7801f996304c97041a94677e1384d5f9, type: 3}
+      propertyPath: m_fontStyle
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6375750089525603119, guid: 7801f996304c97041a94677e1384d5f9, type: 3}
       propertyPath: m_RootOrder
@@ -1483,6 +1505,10 @@ PrefabInstance:
     - target: {fileID: 1944114372818860156, guid: 7801f996304c97041a94677e1384d5f9, type: 3}
       propertyPath: m_text
       value: 4.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454452024029303994, guid: 7801f996304c97041a94677e1384d5f9, type: 3}
+      propertyPath: m_fontStyle
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6375750089525603119, guid: 7801f996304c97041a94677e1384d5f9, type: 3}
       propertyPath: m_RootOrder

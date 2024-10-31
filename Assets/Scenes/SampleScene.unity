@@ -2260,7 +2260,19 @@ MonoBehaviour:
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1992293180}
+        m_TargetAssemblyTypeName: HighscoreController, Assembly-CSharp
+        m_MethodName: NameValueChanged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnSubmit:
     m_PersistentCalls:
       m_Calls: []
@@ -2269,7 +2281,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnDeselect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1992293180}
+        m_TargetAssemblyTypeName: HighscoreController, Assembly-CSharp
+        m_MethodName: NameValueChanged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnTextSelection:
     m_PersistentCalls:
       m_Calls: []
@@ -4452,10 +4476,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HS: {fileID: 1992293181}
-  playerName: {fileID: 47631527}
-  Pname: {fileID: 610542464}
+  playerName: {fileID: 2015934467}
+  Pname: {fileID: 225537625}
   playerScore: {fileID: 409755681}
-  saveButton: {fileID: 1540860813}
+  saveButton: {fileID: 430633382}
   scoreUI: {fileID: 304228675}
 --- !u!114 &1992293181
 MonoBehaviour:
@@ -4471,6 +4495,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Mainmenubutton: {fileID: 196712651}
   HSController: {fileID: 1992293180}
+  scoreList: []
+  allScores:
+    all_scores: []
 --- !u!4 &1992293182
 Transform:
   m_ObjectHideFlags: 0
