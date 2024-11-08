@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0bb12b9b295db7c4692d43c979e64676
+guid: dfecf3f8e6f6009419caa334d7e11e9e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -113,116 +113,59 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: titular-character_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 19
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8dc5abef254a6eb459cbcdd662775ba8
-      internalID: 1958339949
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: titular-character_1
-      rect:
-        serializedVersion: 2
-        x: 19
-        y: 64
-        width: 19
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0dfe785f93878844aa144b8f9369ff5d
-      internalID: 299948042
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: titular-character_2
-      rect:
-        serializedVersion: 2
-        x: 38
-        y: 64
-        width: 19
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d21477d9c2a60384c9504f0ed8a4161c
-      internalID: 15122836
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: titular-character_3
-      rect:
-        serializedVersion: 2
-        x: 57
-        y: 64
-        width: 19
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e498b8c97f35b1342858a4436cc009e4
-      internalID: 545840517
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: titular-character_4
-      rect:
-        serializedVersion: 2
-        x: 76
-        y: 64
-        width: 19
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 32dca8ac713420d40b636997ae5ff497
-      internalID: -2056418358
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: titular-character_5
+      name: game_over 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -236,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f43cbddd62cc4744ba3990b041f15537
-      internalID: -82669866
+      spriteID: a16111cf78cb6a146acb8540e8e79ea8
+      internalID: 971555205
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: titular-character_6
+      name: game_over 1_1
       rect:
         serializedVersion: 2
         x: 19
@@ -257,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 693f01ea816c3a749988f59c711fb08f
-      internalID: 1742709756
+      spriteID: 3d9dc6ef14ee0b54383994c58ee08f7a
+      internalID: -8141263
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: titular-character_7
+      name: game_over 1_2
       rect:
         serializedVersion: 2
         x: 38
@@ -278,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e18cda1d8fbc3e43b57edb6a85dd448
-      internalID: -58365576
+      spriteID: 3ca2f81039193544490341016ec46775
+      internalID: -856673322
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: titular-character_8
+      name: game_over 1_3
       rect:
         serializedVersion: 2
         x: 57
@@ -299,14 +242,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8774c06402dea564f86d2ac9ba97ae17
-      internalID: -1813485760
+      spriteID: b820ed4c6a8b4aa41a88acd4525b773d
+      internalID: -1467963007
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: titular-character_9
+      name: game_over 1_4
       rect:
         serializedVersion: 2
         x: 76
@@ -320,8 +263,218 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1a058d8553ac0446a22ff5c9e5582f3
-      internalID: 1926049584
+      spriteID: c3ba84bb706200443974790d487fa3be
+      internalID: -473390488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_over 1_5
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 0
+        width: 19
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 214652e34b43d1f43b4ef17549faf729
+      internalID: -1389259035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_over 1_6
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 0
+        width: 19
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef3787bea73eac349b85ea6fc380cc61
+      internalID: 2046446573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_over 1_7
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 0
+        width: 19
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0008f1d83d932bf4da735ca6cf2676d9
+      internalID: -2129940690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_over 1_8
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 0
+        width: 19
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4aceae302ae46747a76b958bf8f035f
+      internalID: -2057814178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_over 1_9
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 0
+        width: 19
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3fc3d5c91e52474b8401887f8153196
+      internalID: -682262418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_over 1_10
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 0
+        width: 19
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f75bc263d5ef13a4a8756460e629712d
+      internalID: 885706690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_over 1_11
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 0
+        width: 19
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93af8954c5346f549b3adc9e35a08eff
+      internalID: 793158015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_over 1_12
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 0
+        width: 19
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e2105d8cbbd23d478c10eb9ea4da4df
+      internalID: -757609049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_over 1_13
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 0
+        width: 19
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6441c55b97935b49aad480a66fe8334
+      internalID: -1161162533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_over 1_14
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 0
+        width: 19
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2f5ef7a5e37ddf46a3a7011b3a9e79c
+      internalID: -38395742
       vertices: []
       indices: 
       edges: []
@@ -337,16 +490,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      titular-character_5: -82669866
-      titular-character_8: -1813485760
-      titular-character_4: -2056418358
-      titular-character_1: 299948042
-      titular-character_0: 1958339949
-      titular-character_3: 545840517
-      titular-character_9: 1926049584
-      titular-character_2: 15122836
-      titular-character_6: 1742709756
-      titular-character_7: -58365576
+      game_over 1_7: -2129940690
+      game_over 1_8: -2057814178
+      game_over 1_4: -473390488
+      game_over 1_12: -757609049
+      game_over 1_14: -38395742
+      game_over 1_3: -1467963007
+      game_over 1_1: -8141263
+      game_over 1_0: 971555205
+      game_over 1_13: -1161162533
+      game_over 1_2: -856673322
+      game_over 1_6: 2046446573
+      game_over 1_9: -682262418
+      game_over 1_5: -1389259035
+      game_over 1_10: 885706690
+      game_over 1_11: 793158015
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
