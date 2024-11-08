@@ -3444,9 +3444,9 @@ MonoBehaviour:
   spiritJumpForce: 552.4
   deathHeight: 10
   gameOverUI: {fileID: 1530207594}
-  can_sideJump: 0
-  HSController: {fileID: 1992293180}
-  myAC: {fileID: 1473647450}
+  can_sideJump: 1
+  HSController: {fileID: 0}
+  myAC: {fileID: 0}
 --- !u!114 &1473647450
 MonoBehaviour:
   m_ObjectHideFlags: 0

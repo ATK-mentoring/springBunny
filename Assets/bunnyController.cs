@@ -25,6 +25,8 @@ public class bunnyController : MonoBehaviour
     private bool isGameOverProcessed = false;
     public audioController myAC;
 
+    private float HorizontalMove;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,8 +39,8 @@ public class bunnyController : MonoBehaviour
     {
         if (!gameover)
         {
-            //my_animator.ResetTrigger("jump");
-            //my_animator.ResetTrigger("landed");
+            my_animator.ResetTrigger("jump");
+            my_animator.ResetTrigger("landed");
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 if (is_grounded)
@@ -46,7 +48,7 @@ public class bunnyController : MonoBehaviour
                     isFalling = false;
                     // can jump
                     my_animator.SetTrigger("jump");
-                    //my_animator.ResetTrigger("landed");
+                    my_animator.ResetTrigger("landed");
                     Jump(jump_force);
                     
                 } else if (can_sideJump)
@@ -54,26 +56,19 @@ public class bunnyController : MonoBehaviour
                     isFalling = false;
                     // can jump
                     my_animator.SetTrigger("climb");
-                    //my_animator.ResetTrigger("landed");
+                    my_animator.ResetTrigger("landed");
                     Jump(side_jump_force);
                     //land
-                    myAC.playSound("land");
+                   myAC.playSound("land");
                 }
 
             }
             if (!is_grounded)
             {
                 // check if moving left or right
-                float move_input = 0.0f;
-                if (Input.GetKey(KeyCode.LeftArrow))
-                {
-                    move_input += -1.0f;
-                }
-                if (Input.GetKey(KeyCode.RightArrow))
-                {
-                    move_input += 1.0f;
-                }
-                my_rigidbody.AddForce(transform.right * move_input * move_speed);
+               HorizontalMove = Input.GetAxisRaw("Horizontal");
+                
+                my_rigidbody.AddForce(transform.right * HorizontalMove * move_speed);
             }
             //flip sprite to face movement
             if (Mathf.Abs(my_rigidbody.velocity.x) > 0.0f && !can_sideJump)
@@ -130,7 +125,7 @@ public class bunnyController : MonoBehaviour
                 myAC.playSound("gameOver");
                 gameOverUI.SetActive(true);
 
-                HSController.isHighScore();
+               HSController.isHighScore();
                 isGameOverProcessed = true;
                 //show text field for player name input
                 //show button for saving high score
@@ -166,12 +161,12 @@ public class bunnyController : MonoBehaviour
             is_grounded = false;
             my_rigidbody.velocity = new Vector2(my_rigidbody.velocity.x, 0.0f);
             my_rigidbody.AddForce(transform.up * spiritJumpForce);
-            myAC.playSound("spiritJump");
+           myAC.playSound("spiritJump");
             my_animator.SetTrigger("jump");
 
         } else if (collision.gameObject.tag == "side")
         {
-            //Debug.Log("side detected");
+  
             can_sideJump = true;
             canDieToFalling = false;
             isFalling = false;
@@ -199,14 +194,13 @@ public class bunnyController : MonoBehaviour
         my_rigidbody.AddForce(transform.up * this_jump_force);
         is_grounded = false;
         my_animator.ResetTrigger("landed");
-        myAC.playSound("jump");
+       myAC.playSound("jump");
     } 
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "spirit")
         {
-            //Debug.Log("spirit hit");
             my_rigidbody.isKinematic = false;
             myAC.playSound("spiritHit");
         }
