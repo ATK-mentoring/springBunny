@@ -25,6 +25,8 @@ public class bunnyController : MonoBehaviour
     private bool isGameOverProcessed = false;
     public audioController myAC;
 
+    private float horizontalmove;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -64,16 +66,10 @@ public class bunnyController : MonoBehaviour
             if (!is_grounded)
             {
                 // check if moving left or right
-                float move_input = 0.0f;
-                if (Input.GetKey(KeyCode.LeftArrow))
-                {
-                    move_input += -1.0f;
-                }
-                if (Input.GetKey(KeyCode.RightArrow))
-                {
-                    move_input += 1.0f;
-                }
-                my_rigidbody.AddForce(transform.right * move_input * move_speed);
+
+                horizontalmove = Input.GetAxisRaw("Horizontal");
+                
+                my_rigidbody.AddForce(transform.right * horizontalmove * move_speed);
             }
             //flip sprite to face movement
             if (Mathf.Abs(my_rigidbody.velocity.x) > 0.0f && !can_sideJump)
